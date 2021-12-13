@@ -11,7 +11,7 @@ const Dropdown: VFC<CarListProps> = ({ cars, onChange, name }) => {
     return (
         <SelectMenu onChange={onChange} name={name} data-testid={`drop-down-${name}`}>
             {
-                cars?.map((car, index) => <option key={index} value={car}>{car}</option>)
+                cars?.map((car, index) => <option key={index} value={car} data-testid="select-option">{car}</option>)
             }
         </SelectMenu>
     )
