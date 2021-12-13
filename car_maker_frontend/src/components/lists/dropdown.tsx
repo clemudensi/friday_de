@@ -9,7 +9,7 @@ interface CarListProps {
 
 const Dropdown: VFC<CarListProps> = ({ cars, onChange, name }) => {
     return (
-        <SelectMenu onChange={onChange} name={name}>
+        <SelectMenu onChange={onChange} name={name} data-testid={`drop-down-${name}`}>
             {
                 cars?.map((car, index) => <option key={index} value={car}>{car}</option>)
             }

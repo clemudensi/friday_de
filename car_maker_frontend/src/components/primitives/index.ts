@@ -4,8 +4,8 @@ import { keyframes } from 'styled-components';
 const Container = styled.div`
 	display: flex;
 	width: 100%;
-	padding: ${({ theme }) => `${theme.factor(4)} 0`};
 	align-items: center;
+	margin: ${({ theme }) => `0 ${theme.factor(2)}`};
 `;
 
 const ContainerCenter = styled.div`
@@ -23,6 +23,7 @@ const ContainerStart = styled.div`
 
 const SectionContainer = styled.div`
 	padding: ${({ theme }) => `${theme.factor(4)} 0`};
+	display: flex;
 `;
 
 const Title = styled.h2`
@@ -49,17 +50,15 @@ const SearchBarContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: .75rem;
-    border: 1px solid;
-    border-radius: .3rem;
-    width: 75%;
+    padding: .4rem;
+    border: 1px solid grey;
     &:hover {
     box-shadow: 1px 1px 1px thistle;
     }
 `;
 
 const InputContainer = styled.div`
-    display: flex;
+    display: contents;
     flex-wrap: wrap;
     flex: 1 0;
     align-items: center;
@@ -76,6 +75,7 @@ const ListContainer = styled.ul`
 	color: #3faffa;
 	font-size: 1rem;
 	font-weight: 500;
+	width: 50%;
 `;
 
 const ListItems = styled.li`

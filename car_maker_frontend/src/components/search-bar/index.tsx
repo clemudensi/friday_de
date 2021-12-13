@@ -3,24 +3,18 @@ import * as Styled from 'components';
 import { IconProps } from 'types';
 
 interface SearchBarProps extends IconProps {
-    cancelSearch?: () => void;
-    focused: boolean | unknown;
     handleClearText?: () => void;
     inputValue: string;
     onChange: (arg: React.ChangeEvent<HTMLInputElement>) => void;
-    onFocus?: () => void;
     searchInput: React.MutableRefObject<HTMLInputElement| null>;
 }
 
 const SearchBar: VFC<SearchBarProps> = ({
-    cancelSearch,
     color,
     cursor,
-    focused,
     inputValue,
     onChange,
     handleClearText,
-    onFocus,
     searchInput,
     size
 }) => {
@@ -32,7 +26,6 @@ const SearchBar: VFC<SearchBarProps> = ({
                     onChange={onChange}
                     placeholder="Search"
                     type="text"
-                    onFocus={onFocus}
                     ref={searchInput}
                 />
                 <Styled.ContainerEnd>
@@ -47,14 +40,6 @@ const SearchBar: VFC<SearchBarProps> = ({
                     }
                 </Styled.ContainerEnd>
             </Styled.SearchBarContainer>
-            {
-                (focused ?? inputValue) &&
-                    <Styled.CancelContainer
-                        onClick={cancelSearch}
-                    >
-                        cancel
-                    </Styled.CancelContainer>
-            }
         </Styled.Container>
     )
 };
